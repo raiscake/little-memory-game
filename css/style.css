@@ -35,6 +35,7 @@ body {
     height: 10vw;
     margin: .5em;
     padding: 1em;
+    background-image: url('../img/question-mark.svg');
     background-size: cover;
     border: 3px solid #000;
     border-radius: 20px;
