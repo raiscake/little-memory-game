@@ -1,0 +1,46 @@
+/* General */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 10px/2 'Roboto Slab', 'Georgia', sans-serif;
+}
+
+/* Header */
+
+.header-title {
+    font: 2em 'Delius', cursive;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Game Grid */
+
+.game-grid {
+    padding: 0;
+    list-style-type: none;
+}
+
+.game-grid-cell {
+    float: left;
+    width: 10vw;
+    height: 10vw;
+    margin: .5em;
+    padding: 1em;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+
+.game-grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
