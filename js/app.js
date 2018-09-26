@@ -30,11 +30,13 @@ function randomizeDeck(deck) {
 
 function attachDeck() {
     const randomCards = randomizeDeck(cardDeck); 
-    const gridCell = document.createElement('li');
-    for (card of randomCards) {
-        let cardName = card;
-        for (cell of gridCells) {
-            cell.classList.add(cardName);
-        }
+    for (let i = 0; randomCards.length > 0; i++) {
+        gridCells[i].classList.add(randomCards[i]);
     }
+//    for (card of randomCards) {
+//        let cardName = card;
+//        for (cell of gridCells) {
+//            cell.classList.add(cardName);
+//        }
+//  }
 }
