@@ -1,3 +1,5 @@
+// Declare variables
+
 const grid = document.querySelector('.game-grid');
 
 const gridCells = document.getElementsByClassName('game-grid-cell');
@@ -6,6 +8,7 @@ const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingst
 
 const totalCards = cardsList.length * 2;
 
+// Make a full deck of cards
 function makeCardDeck(cards) {
     let pair = cardsList.slice(0),
         deck = cardsList.concat(pair);
@@ -14,6 +17,7 @@ function makeCardDeck(cards) {
 
 const cardDeck = makeCardDeck(cardsList);
 
+// Shuffle deck
 function randomizeDeck(deck) {
     let i = 0,
         j = 0,
@@ -28,10 +32,13 @@ function randomizeDeck(deck) {
     return(deck);    
 }
 
+// Attach deck to game grid
 function attachDeck() {
-    const randomCards = randomizeDeck(cardDeck); 
-    for (let i = 0; randomCards.length > 0; i++) {
-        gridCells[i].classList.add(randomCards[i]);
+    const randomCards = randomizeDeck(cardDeck);
+    let i = 0; 
+    for (cell of gridCells) {
+        cell.setAttribute('type', randomCards[i]);
+        i++;
     }
 //    for (card of randomCards) {
 //        let cardName = card;
@@ -39,4 +46,15 @@ function attachDeck() {
 //            cell.classList.add(cardName);
 //        }
 //  }
+}
+
+attachDeck();
+
+// Add event listener
+for (cell of gridCells) {
+    let cardIcon = cell.getAttribute('type');
+    cell.addEventListener('click', function() {
+        console.log('clicked');
+        this.classList.add(cardIcon); 
+    });
 }
