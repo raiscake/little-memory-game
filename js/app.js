@@ -44,10 +44,7 @@ function attachDeck() {
     }
 }
 
-attachDeck();
-
-let flippedCards = [];
-
+// Add flip card functionality
 function flipCard() {
     let cardIcon = this.getAttribute('type');
     this.classList.add(cardIcon);
@@ -61,38 +58,69 @@ function flipCard() {
     }
 }
 
+// Add matching logic
+let flippedCards = [];
+
 function matchCards() {
+    // Check if 2 cards are flipped
     if (flippedCards.length == 2) {
-        console.log("is it a match?");
         const firstCard = flippedCards[0],
             secondCard = flippedCards[1];
+
+        console.log("is it a match?");
+        
+        // If cards match...    
         if (firstCard.type === secondCard.type) {
-            console.log('yes!');
+            // set classes and attr for first card
             firstCard.classList.remove('face-down');
             firstCard.classList.add('matched');
             firstCard.setAttribute('matched', true);
 
+            // set classes and attr for second card
             secondCard.classList.remove('face-down');
             secondCard.classList.add('matched');
             secondCard.setAttribute('matched', true);
         }
+        // If cards don't match..
         else {
-            console.log('nope :(');
             setTimeout(function(){
+                // flip down first card
                 firstCard.classList.add('face-down');
                 firstCard.removeAttribute('flipped');
+
+                // flip down second card
                 secondCard.classList.add('face-down');
                 secondCard.removeAttribute('flipped');
             }, 750);
             
         }
+
+        // Empty flipped cards array
         flippedCards = [];
     }
+    // Safety measure in case more cards get flipped in one turn
+    else if (flippedCards.length > 2) {
+        console.log('I don\'t know how you did this but congrats on breaking my code?');
+        flippedCards = [];
+    }
+
+    
 }
+
+// When all cards are matched...
+function finishGame() {
+    if (gridCells.every(hasAttribute('matched'))) {
+        console.log("you matched all the cards. grats!");
+    }    
+}
+
+// Start the game!
+attachDeck();
 
 // Add listeners
 for (let i = 0; i < gridCells.length; i++) {
     let cell = gridCells[i];
-    cell.addEventListener("click", flipCard, false);
+    cell.addEventListener("click", flipCard);
     cell.addEventListener("click", matchCards);
+//    cell.addEventListener("click", finishGame);
 }
