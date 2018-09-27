@@ -56,17 +56,22 @@ function flipCard() {
     flippedCards.push(cardIcon);
 }
 
-function playGame() {
-    if (flippedCards == 2) {
+function matchCards() {
+    if (flippedCards.length == 2) {
         console.log("is it a match?");
-    }
-    return flippedCards;
-}
+        if (flippedCards[0] === flippedCards[1]) {
+            console.log('yes!');
 
-playGame();
+        }
+        else {
+            console.log('nope :(');
+        }
+    }
+}
 
 // Add listeners
 for (let i = 0; i < gridCells.length; i++) {
     let cell = gridCells[i];
     cell.addEventListener("click", flipCard);
+    cell.addEventListener("click", matchCards);
 }
