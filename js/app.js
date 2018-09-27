@@ -45,25 +45,55 @@ function randomizeDeck(deck) {
 // Attach deck to game grid
 function attachDeck() {
     const randomCards = randomizeDeck(cardDeck);
-    let i = 0; 
     for (let i = 0; i < gridCells.length; i++) {
         let cell = gridCells[i];
         cell.setAttribute('type', randomCards[i]);
     }
 }
 
-// Add flip card functionality
+// Add timer
+const minsTimer = document.getElementById('timer-minutes');
+const secsTimer = document.getElementById('timer-seconds');
+
+let secs = 0,
+    mins = 0,
+    time;
+
+function setTimer() {
+    time = setInterval(function(){
+        secs++;
+        if (secs == 60) {
+            mins++;
+            secs = 0;
+        }
+        secsTimer.textContent = secs;
+        minsTimer.textContent = mins;
+    }, 1000)
+}
+
+// Add flip card functionality w/ timer and move counter
 function flipCard() {
     let cardIcon = this.getAttribute('type');
     this.classList.add(cardIcon);
+
+    // Ignore card if already matched or flipped up
     if ((this.hasAttribute('matched')) || (this.hasAttribute('flipped'))) {
        return false;
     }
+
+    // Otherwise, flip it up and it to array
     else {
         this.setAttribute('flipped', true);
         this.classList.remove('face-down');
         flippedCards.push(this);
     }
+
+    // Start timer if moves = 0
+    if (moveCount == 0) {
+        setTimer();
+    }
+
+    // Add to move counter
     moveCount++;
     moveCounter.textContent = moveCount;
 }
@@ -114,18 +144,16 @@ function matchCards() {
 }
 
 // When all cards are matched...
-
-
 function finishGame() {
     if (matchedCards == totalCards) {
         console.log("you matched all the cards. grats!");
+        clearInterval(time);
     }
 }
 
 // Start the game!
 attachDeck();
 
-// Add listeners
 for (let i = 0; i < gridCells.length; i++) {
     let cell = gridCells[i];
     cell.addEventListener("click", flipCard);
