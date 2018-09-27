@@ -110,7 +110,7 @@ function matchCards() {
 
 
 function finishGame() {
-    if (matchedCards == 16) {
+    if (matchedCards == totalCards) {
         console.log("you matched all the cards. grats!");
     }
 }
