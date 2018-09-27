@@ -38,49 +38,25 @@ function randomizeDeck(deck) {
 function attachDeck() {
     const randomCards = randomizeDeck(cardDeck);
     let i = 0; 
-    for (cell of gridCells) {
+    for (let i = 0; i < gridCells.length; i++) {
+        let cell = gridCells[i];
         cell.setAttribute('type', randomCards[i]);
         cell.setAttribute('order', i);
-        i++;
     }
-//    for (card of randomCards) {
-//        let cardName = card;
-//        for (cell of gridCells) {
-//            cell.classList.add(cardName);
-//        }
-//  }
 }
 
 attachDeck();
 
-// Add event listener
-function clickCell(c) {
-    let cardIcon = c.getAttribute('type'); 
-    c.addEventListener('click', function() {
-        this.classList.add(cardIcon); 
-    });
-}
-
-for (cell of gridCells) {
-    clickCell(cell);
-}
-
 let flippedCards = [];
 
-function flipCards(c) {
-    let i = 0;
-    c.addEventListener('click', function(){
-        let cardIcon = cell.getAttribute('type');
-        flippedCards.push(cardIcon[i]);
-        i++;
-    });
+function flipCard() {
+    let cardIcon = this.getAttribute('type');
+    this.classList.add(cardIcon);
+    console.log(cardIcon);
+    flippedCards.push(cardIcon);
 }
 
 function playGame() {
-    for (cell of gridCells) {
-        flipCards(cell);
-    }
-
     if (flippedCards == 2) {
         console.log("is it a match?");
     }
@@ -88,3 +64,9 @@ function playGame() {
 }
 
 playGame();
+
+// Add listeners
+for (let i = 0; i < gridCells.length; i++) {
+    let cell = gridCells[i];
+    cell.addEventListener("click", flipCard);
+}
