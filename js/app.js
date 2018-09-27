@@ -1,4 +1,4 @@
-// Declare variables
+// Declare fixed variables
 
 const grid = document.querySelector('.game-grid');
 
@@ -9,6 +9,12 @@ const gridCellSingle = document.querySelector('.game-grid-cell');
 const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingstar', 'telescope', 'ufo'];
 
 const totalCards = cardsList.length * 2;
+
+// Declare game variables
+
+let flippedCards = [];
+let matchedCards = 0;
+let moveCount = 0;
 
 // Make a full deck of cards
 function makeCardDeck(cards) {
@@ -56,12 +62,11 @@ function flipCard() {
         this.classList.remove('face-down');
         flippedCards.push(this);
     }
+    moveCount++;
+    console.log('move count: ' + moveCount);
 }
 
 // Add matching logic
-let flippedCards = [];
-let matchedCards = 0;
-
 function matchCards() {
     // Check if 2 cards are flipped
     if (flippedCards.length == 2) {
