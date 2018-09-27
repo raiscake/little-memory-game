@@ -86,3 +86,28 @@ body {
 .face-down {
     background-image: url('../img/question-mark.svg');
 }
+
+/* Victory Modal */
+
+.victory-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.33);
+}
+
+.victory-modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.victory-modal-box{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    background: #fff;
+}
