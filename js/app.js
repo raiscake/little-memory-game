@@ -60,14 +60,13 @@ function flipCard() {
 
 // Add matching logic
 let flippedCards = [];
+let matchedCards = 0;
 
 function matchCards() {
     // Check if 2 cards are flipped
     if (flippedCards.length == 2) {
         const firstCard = flippedCards[0],
             secondCard = flippedCards[1];
-
-        console.log("is it a match?");
         
         // If cards match...    
         if (firstCard.type === secondCard.type) {
@@ -80,6 +79,8 @@ function matchCards() {
             secondCard.classList.remove('face-down');
             secondCard.classList.add('matched');
             secondCard.setAttribute('matched', true);
+
+            matchedCards += 2;
         }
         // If cards don't match..
         else {
@@ -102,16 +103,16 @@ function matchCards() {
     else if (flippedCards.length > 2) {
         console.log('I don\'t know how you did this but congrats on breaking my code?');
         flippedCards = [];
-    }
-
-    
+    }   
 }
 
 // When all cards are matched...
+
+
 function finishGame() {
-    if (gridCells.every(hasAttribute('matched'))) {
+    if (matchedCards == 16) {
         console.log("you matched all the cards. grats!");
-    }    
+    }
 }
 
 // Start the game!
@@ -122,5 +123,5 @@ for (let i = 0; i < gridCells.length; i++) {
     let cell = gridCells[i];
     cell.addEventListener("click", flipCard);
     cell.addEventListener("click", matchCards);
-//    cell.addEventListener("click", finishGame);
+    cell.addEventListener("click", finishGame);
 }
