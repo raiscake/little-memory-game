@@ -10,6 +10,8 @@ const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingst
 
 const totalCards = cardsList.length * 2;
 
+const moveCounter = document.getElementById('moves-counter');
+
 // Declare game variables
 
 let flippedCards = [];
@@ -63,7 +65,7 @@ function flipCard() {
         flippedCards.push(this);
     }
     moveCount++;
-    console.log('move count: ' + moveCount);
+    moveCounter.textContent = moveCount;
 }
 
 // Add matching logic
