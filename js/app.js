@@ -4,6 +4,8 @@ const grid = document.querySelector('.game-grid');
 
 const gridCells = document.getElementsByClassName('game-grid-cell');
 
+const gridCellSingle = document.querySelector('.game-grid-cell');
+
 const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingstar', 'telescope', 'ufo'];
 
 const totalCards = cardsList.length * 2;
@@ -38,6 +40,7 @@ function attachDeck() {
     let i = 0; 
     for (cell of gridCells) {
         cell.setAttribute('type', randomCards[i]);
+        cell.setAttribute('order', i);
         i++;
     }
 //    for (card of randomCards) {
@@ -51,10 +54,37 @@ function attachDeck() {
 attachDeck();
 
 // Add event listener
-for (cell of gridCells) {
-    let cardIcon = cell.getAttribute('type');
-    cell.addEventListener('click', function() {
-        console.log('clicked');
+function clickCell(c) {
+    let cardIcon = c.getAttribute('type'); 
+    c.addEventListener('click', function() {
         this.classList.add(cardIcon); 
     });
 }
+
+for (cell of gridCells) {
+    clickCell(cell);
+}
+
+let flippedCards = [];
+
+function flipCards(c) {
+    let i = 0;
+    c.addEventListener('click', function(){
+        let cardIcon = cell.getAttribute('type');
+        flippedCards.push(cardIcon[i]);
+        i++;
+    });
+}
+
+function playGame() {
+    for (cell of gridCells) {
+        flipCards(cell);
+    }
+
+    if (flippedCards == 2) {
+        console.log("is it a match?");
+    }
+    return flippedCards;
+}
+
+playGame();
