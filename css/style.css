@@ -37,7 +37,7 @@ body {
     height: 10vw;
     margin: .5em;
     padding: 1em;
-    background: #63b0e6 url('../img/question-mark.svg');
+    background: #999 url('../img/question-mark.svg');
     background-size: cover;
     border: 10px solid #fff;
     border-radius: 20px;
@@ -52,41 +52,49 @@ body {
 /* Grid Cards */
 
 .astronaut {
+    background-color: #a22b47;
     background-image: url('../img/astronaut.svg');
 }
 
 .atom {
+    background-color: #d66724;
     background-image: url('../img/atom.svg');
 }
 
 .robot {
+    background-color: #d4b038;
     background-image: url('../img/robot.svg');
 }
 
 .rocket {
+    background-color: #96d868;
     background-image: url('../img/rocket.svg');
 }
 
 .saturn {
+    background-color: #63b0e6;
     background-image: url('../img/saturn.svg');
 }
 
 .shootingstar {
+    background-color: #a068b1;
     background-image: url('../img/shootingstar.svg');
 }
 
 .telescope {
+    background-color: #556B2F;
     background-image: url('../img/telescope.svg');
 }
 
 .ufo {
+    background-color: #066666;
     background-image: url('../img/ufo.svg');
 }
 
 /* Grid Card States */
 
 .face-down {
-    background-image: url('../img/question-mark.svg');
+    background-image: #999 url('../img/question-mark.svg');
 }
 
 /* Game Stats */

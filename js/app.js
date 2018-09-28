@@ -225,3 +225,12 @@ function resetGame() {
 }
 
 resetButton.addEventListener('click', resetGame);
+
+// Cheat codes!
+
+function revealCards() {
+    for (cell of gridCells) {
+        let cardIcon = cell.getAttribute('type');
+        cell.classList.add(cardIcon);
+    }
+}
