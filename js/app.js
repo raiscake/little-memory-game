@@ -1,24 +1,21 @@
-// Declare fixed variables
+// Declare game grid variables
 
 const grid = document.querySelector('.game-grid');
-
 const gridCells = document.getElementsByClassName('game-grid-cell');
-
 const gridCellSingle = document.querySelector('.game-grid-cell');
-
 const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingstar', 'telescope', 'ufo'];
-
 const totalCards = cardsList.length * 2;
 
-const moveCounter = document.getElementById('moves-counter');
-
-const victoryModal = document.querySelector('.victory-modal');
-
-// Declare game variables
+// Declare game proper variables
 
 let flippedCards = [];
 let matchedCards = 0;
 let moveCount = 0;
+
+// Declare game stats variables
+
+const moveCounter = document.getElementById('moves-counter');
+const victoryModal = document.querySelector('.victory-modal');
 
 // Make a full deck of cards
 function makeCardDeck(cards) {
@@ -149,7 +146,31 @@ function matchCards() {
 function finishGame() {
     if (matchedCards == totalCards) {
         clearInterval(time);
-        victoryModal.classList.add('activated');
+        victoryModal.classList.add('enabled');
+    }
+}
+
+// Add rating system
+const starCounter = document.querySelector('.game-stats-rating');
+const starIcon = document.getElementsByClassName('rating-star');
+
+function checkRating() {
+    // Start with 5 stars
+    // If between than 13 moves and 16 moves, remove one star
+    if ((moveCount >= 13) && (moveCount <= 16)) {
+        starIcon[4].classList.add('disabled');
+    }
+    // Between 17 and 20, remove one more star
+    else if ((moveCount >= 17) && (moveCount <= 20)) {
+        starIcon[3].classList.add('disabled');
+    }
+    // Between 21 and 24, remove one more star
+    else if ((moveCount >= 21) && (moveCount <= 24)) {
+        starIcon[2].classList.add('disabled');
+    }
+    // 25 onwards, remove one more star
+    else if (moveCount >= 25) {
+        starIcon[1].classList.add('disabled');
     }
 }
 
@@ -160,5 +181,6 @@ for (let i = 0; i < gridCells.length; i++) {
     let cell = gridCells[i];
     cell.addEventListener("click", flipCard);
     cell.addEventListener("click", matchCards);
+    cell.addEventListener("click", checkRating);
     cell.addEventListener("click", finishGame);
 }

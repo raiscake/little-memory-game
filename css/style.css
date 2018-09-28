@@ -97,6 +97,10 @@ body {
     display: inline-block;
 }
 
+.rating-star.disabled {
+    opacity: .25;
+}
+
 /* Victory Modal */
 
 .victory-modal {
@@ -128,13 +132,13 @@ body {
     background: #fff;
 }
 
-/* Victory Modal Activated */
+/* Victory Modal Enabled */
 
-.victory-modal.activated {
+.victory-modal.enabled {
     opacity: 1;
     pointer-events: auto;
 }
 
-.victory-modal.activated .victory-modal-wrapper {
+.victory-modal.enabled .victory-modal-wrapper {
     transform: translateY(0);
 }
