@@ -193,17 +193,17 @@ function resetGame() {
     victoryModal.classList.remove('enabled');
 
     // Reset match variables
-    let flippedCards = [];
-    let matchedCards = 0;
+    flippedCards = [];
+    matchedCards = 0;
 
     // Reset move counter
-    let moveCount = 0;
+    moveCount = 0;
     moveCounter.textContent = 0;
 
     // Reset timer
-    let secs = 0,
-        mins = 0,
-        time = 0;
+    secs = 0;
+    mins = 0,
+    time = 0;
 
     secsTimer.textContent = 0;
     minsTimer.textContent = 0;    
