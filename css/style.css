@@ -97,12 +97,18 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.33);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .victory-modal-wrapper {
+    transform: translateY(-9999px);
     display: table-cell;
     vertical-align: middle;
+    transition: all .5s ease-in-out;
 }
+
+
 
 .victory-modal-box{
     max-width: 600px;
@@ -110,4 +116,15 @@ body {
     margin: 0 auto;
     padding: 1em;
     background: #fff;
+}
+
+/* Victory Modal Activated */
+
+.victory-modal.activated {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.victory-modal.activated .victory-modal-wrapper {
+    transform: translateY(0);
 }

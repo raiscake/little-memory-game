@@ -12,6 +12,8 @@ const totalCards = cardsList.length * 2;
 
 const moveCounter = document.getElementById('moves-counter');
 
+const victoryModal = document.querySelector('.victory-modal');
+
 // Declare game variables
 
 let flippedCards = [];
@@ -81,7 +83,7 @@ function flipCard() {
        return false;
     }
 
-    // Otherwise, flip it up and it to array
+    // Otherwise, flip it up and add to array
     else {
         this.setAttribute('flipped', true);
         this.classList.remove('face-down');
@@ -146,8 +148,8 @@ function matchCards() {
 // When all cards are matched...
 function finishGame() {
     if (matchedCards == totalCards) {
-        console.log("you matched all the cards. grats!");
         clearInterval(time);
+        victoryModal.classList.add('activated');
     }
 }
 
