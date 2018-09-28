@@ -21,10 +21,14 @@ body {
 .container {
     max-width: 740px;
     width: 100%;
-    margin: 0 auto;
+    margin: 3em auto;
 }
 
 /* Game Grid */
+
+.game {
+    position: relative;
+}
 
 .game-grid {
     background-color: #fff;
@@ -102,12 +106,28 @@ body {
 
 /* Game Stats */
 
-.game-stats-rating {
+.game-stats {
+    position: absolute;
+    top: 0;
+    right: -200px;
+    max-width: 200px;
+    padding: 0 0 0 20px;
+    list-style-type: none;
+}
+
+.rating-total {
+    padding: 0;
     list-style-type: none;
 }
 
 .rating-star {
     display: inline-block;
+    margin-left: 5px;
+}
+
+.rating-star-image {
+    width: 25px;
+    height: 25px;
 }
 
 .rating-star.disabled {
