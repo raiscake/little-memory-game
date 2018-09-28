@@ -87,6 +87,16 @@ body {
     background-image: url('../img/question-mark.svg');
 }
 
+/* Game Stats */
+
+.game-stats-rating {
+    list-style-type: none;
+}
+
+.rating-star {
+    display: inline-block;
+}
+
 /* Victory Modal */
 
 .victory-modal {
