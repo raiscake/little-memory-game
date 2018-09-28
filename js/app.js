@@ -184,3 +184,45 @@ for (let i = 0; i < gridCells.length; i++) {
     cell.addEventListener("click", checkRating);
     cell.addEventListener("click", finishGame);
 }
+
+// Reset the game
+const resetButton = document.querySelector('.reset-button');
+
+function resetGame() {
+    // Remove victory modal
+    victoryModal.classList.remove('enabled');
+
+    // Reset match variables
+    let flippedCards = [];
+    let matchedCards = 0;
+
+    // Reset move counter
+    let moveCount = 0;
+    moveCounter.textContent = 0;
+
+    // Reset timer
+    let secs = 0,
+        mins = 0,
+        time = 0;
+
+    secsTimer.textContent = 0;
+    minsTimer.textContent = 0;    
+
+    // Reset rating
+    for (icon of starIcon) {
+        icon.classList.remove('disabled');
+    }
+
+    // Flip down cards
+    for (cell of gridCells) {
+        cell.removeAttribute('matched');
+        cell.removeAttribute('flipped');
+        cell.classList.remove('matched');
+        cell.classList.add('face-down');
+    }
+
+    // Reset deck
+    attachDeck();    
+}
+
+resetButton.addEventListener('click', resetGame);
