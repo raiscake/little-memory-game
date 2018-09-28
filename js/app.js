@@ -217,8 +217,7 @@ function resetGame() {
     for (cell of gridCells) {
         cell.removeAttribute('matched');
         cell.removeAttribute('flipped');
-        cell.classList.remove('matched');
-        cell.classList.add('face-down');
+        cell.className ='game-grid-cell';
     }
 
     // Reset deck
