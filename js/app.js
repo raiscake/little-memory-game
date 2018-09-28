@@ -91,10 +91,6 @@ function flipCard() {
     if (moveCount == 0) {
         setTimer();
     }
-
-    // Add to move counter
-    moveCount++;
-    moveCounter.textContent = moveCount;
 }
 
 // Add matching logic
@@ -131,9 +127,12 @@ function matchCards() {
             }, 750);
             
         }
-
         // Empty flipped cards array
         flippedCards = [];
+
+        // Add to move counter
+        moveCount++;
+        moveCounter.textContent = moveCount;
     }
     // Safety measure in case more cards get flipped in one turn
     else if (flippedCards.length > 2) {
