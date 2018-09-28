@@ -156,20 +156,20 @@ const starIcon = document.getElementsByClassName('rating-star');
 
 function checkRating() {
     // Start with 5 stars
-    // If between than 13 moves and 16 moves, remove one star
-    if ((moveCount >= 13) && (moveCount <= 16)) {
+    // If between than 17 moves and 20 moves, remove one star
+    if ((moveCount >= 17) && (moveCount <= 20)) {
         starIcon[4].classList.add('disabled');
-    }
-    // Between 17 and 20, remove one more star
-    else if ((moveCount >= 17) && (moveCount <= 20)) {
-        starIcon[3].classList.add('disabled');
     }
     // Between 21 and 24, remove one more star
     else if ((moveCount >= 21) && (moveCount <= 24)) {
+        starIcon[3].classList.add('disabled');
+    }
+    // Between 25 and 28, remove one more star
+    else if ((moveCount >= 25) && (moveCount <= 28)) {
         starIcon[2].classList.add('disabled');
     }
-    // 25 onwards, remove one more star
-    else if (moveCount >= 25) {
+    // 29 onwards, remove one more star
+    else if (moveCount >= 29) {
         starIcon[1].classList.add('disabled');
     }
 }
