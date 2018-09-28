@@ -7,7 +7,9 @@
 }
 
 body {
+    color: #fff;
     font-family: 10px/2 'Roboto Slab', 'Georgia', sans-serif;
+    background: #071a44;
 }
 
 /* Header */
@@ -35,9 +37,9 @@ body {
     height: 10vw;
     margin: .5em;
     padding: 1em;
-    background-image: url('../img/question-mark.svg');
+    background: #63b0e6 url('../img/question-mark.svg');
     background-size: cover;
-    border: 3px solid #000;
+    border: 10px solid #fff;
     border-radius: 20px;
 }
 
