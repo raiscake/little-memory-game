@@ -151,7 +151,9 @@ function matchCards() {
 function finishGame() {
     if (matchedCards == totalCards) {
         clearInterval(time);
-        victoryModal.classList.add('enabled');
+        setTimeout(function() {
+            victoryModal.classList.add('enabled');
+        }, 750)
     }
 }
 
