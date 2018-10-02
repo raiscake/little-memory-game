@@ -107,14 +107,20 @@ function matchCards() {
         // If cards match...    
         if (firstCard.type === secondCard.type) {
             // set classes and attr for first card
-            firstCard.classList.remove('face-down');
-            firstCard.classList.add('matched');
+            firstCard.classList.remove('face-down');            
             firstCard.setAttribute('matched', true);
+
+            setTimeout(function() {
+                firstCard.classList.add('matched');
+            }, 500);
 
             // set classes and attr for second card
             secondCard.classList.remove('face-down');
-            secondCard.classList.add('matched');
+            
             secondCard.setAttribute('matched', true);
+            setTimeout(function() {
+                secondCard.classList.add('matched');
+            }, 500);
 
             matchedCards += 2;
         }

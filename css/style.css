@@ -126,6 +126,10 @@ h6 {
     transform: rotateY(180deg);
 }
 
+.matched {
+    animation: shake 0.5s ease-in-out;
+}
+
 /* Game Stats */
 
 .game-stats {
@@ -222,4 +226,18 @@ h6 {
 
 .victory-modal.enabled .victory-modal-wrapper {
     transform: translateY(0);
+}
+
+/* Shake Animation */
+
+@keyframes shake {
+    0%, 100% {
+        transform: scale3d(1, 1, 1);
+    }  
+    30%, 70% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
 }
