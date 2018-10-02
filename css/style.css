@@ -59,7 +59,7 @@ h6 {
     border-radius: 20px;
     transform: rotateY(180deg);
     transform-style: preserve-3d;
-    transition: transform .5s ease-in-out, background .25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: transform .5s ease-in-out, background .3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 .game-grid:after {
