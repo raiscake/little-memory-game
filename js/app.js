@@ -66,8 +66,20 @@ function setTimer() {
             mins++;
             secs = 0;
         }
-        secsTimer.textContent = secs;
-        minsTimer.textContent = mins;
+
+        if (secs <= 9) {
+            secsTimer.textContent = '0' + secs;
+        }
+        else {
+            secsTimer.textContent = secs;
+        }
+
+        if (mins <= 9) {
+            minsTimer.textContent = '0' + mins;
+        }
+        else {
+            minsTimer.textContent = mins;
+        }   
     }, 1000)
 }
 
@@ -242,8 +254,10 @@ function resetGame() {
     mins = 0,
     time = 0;
 
-    secsTimer.textContent = 0;
-    minsTimer.textContent = 0;    
+    secsTimer.textContent = '00';
+    minsTimer.textContent = '00';   
+    finalSecs.textContent = 0; 
+    finalMins.textContent = '';
 
     // Reset rating
     for (icon of starIcon) {
