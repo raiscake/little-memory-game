@@ -150,12 +150,13 @@ h6 {
 /* Game Stats */
 
 .game-stats {
-    position: absolute;
-    top: 0;
-    right: -200px;
-    max-width: 200px;
     padding: 0;
     list-style-type: none;
+}
+
+.game-stats > li {
+    display: inline-block;
+    margin: 0 1em 0 0;
 }
 
 .games-stats-name {
@@ -285,5 +286,22 @@ h6 {
     }
     50% {
         transform: scale3d(1.05, 1.05, 1.05);
+    }
+}
+
+/* Min-width: 1024px */
+
+@media screen and (min-width: 1200px) {
+
+    .game-stats {
+        position: absolute;
+        top: 0;
+        right: -200px;
+        max-width: 200px;
+    }
+
+    .game-stats > li {
+        display: block;
+        margin: 0;
     }
 }

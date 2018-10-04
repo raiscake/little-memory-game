@@ -288,3 +288,4 @@ function revealCards() {
         cell.classList.add(cardIcon);
     }
 }
+
