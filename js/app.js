@@ -150,11 +150,13 @@ function matchCards() {
 // When all cards are matched...
 const finalMins = document.getElementById('final-minutes');
 const finalSecs = document.getElementById('final-seconds');
+const finalMoves = document.getElementById('final-moves');
 
 function finishGame() {
     if (matchedCards == totalCards) {
         // Stop the timer
         clearInterval(time);
+
         // Tally final time
         if (mins == 1) {
             finalMins.textContent = mins + ' minute and ';
@@ -163,6 +165,11 @@ function finishGame() {
             finalMins.textContent = mins + ' minutes and ';
         }
         finalSecs.textContent = secs;
+
+        // Tally moves
+        finalMoves.textContent = moveCount;
+
+        // Pull down modal
         setTimeout(function() {
             victoryModal.classList.add('enabled');
         }, 750)

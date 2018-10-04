@@ -185,7 +185,7 @@ h6 {
 .victory-modal-box{
     -webkit-box-shadow: 5px 5px 0 0 rgba(181,252,254,1);
     -moz-box-shadow: 5px 5px 0 0 rgba(181,252,254,1);
-    max-width: 600px;
+    max-width: 500px;
     width: 100%;
     margin: 0 auto;
     padding: 2em;
@@ -205,6 +205,22 @@ h6 {
 
 .victory-modal-stats {
     margin: .25em 0 1.25em;
+}
+
+#final-rating {
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.final-rating-star {
+    display: inline-block;
+    margin: 0 .5em;
+}
+
+.final-rating-star-image {
+    width: 30px;
+    height: 30px;
 }
 
 .reset-button {
