@@ -216,6 +216,11 @@ h6 {
 .final-rating-star {
     display: inline-block;
     margin: 0 .5em;
+    opacity: .25;
+}
+
+.final-rating-star.enabled {
+    opacity: 1;
 }
 
 .final-rating-star-image {

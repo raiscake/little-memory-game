@@ -11,6 +11,7 @@ const totalCards = cardsList.length * 2;
 let flippedCards = [];
 let matchedCards = 0;
 let moveCount = 0;
+let starRating = 5;
 
 // Declare game stats variables
 
@@ -151,6 +152,7 @@ function matchCards() {
 const finalMins = document.getElementById('final-minutes');
 const finalSecs = document.getElementById('final-seconds');
 const finalMoves = document.getElementById('final-moves');
+const finalRating = document.getElementsByClassName('final-rating-star');
 
 function finishGame() {
     if (matchedCards == totalCards) {
@@ -169,6 +171,11 @@ function finishGame() {
         // Tally moves
         finalMoves.textContent = moveCount;
 
+        // Tally rating
+        for (let i = 0; i < starRating; i++) {
+            finalRating[i].classList.add('enabled');
+        }
+
         // Pull down modal
         setTimeout(function() {
             victoryModal.classList.add('enabled');
@@ -185,18 +192,22 @@ function checkRating() {
     // If between than 25 moves and 28 moves, remove one star
     if ((moveCount >= 25) && (moveCount <= 28)) {
         starIcon[4].classList.add('disabled');
+        starRating = 4;
     }
     // Between 29 and 32, remove one more star
     else if ((moveCount >= 29) && (moveCount <= 32)) {
         starIcon[3].classList.add('disabled');
+        starRating = 3;
     }
     // Between 33 and 36, remove one more star
     else if ((moveCount >= 33) && (moveCount <= 36)) {
         starIcon[2].classList.add('disabled');
+        starRating = 2;
     }
     // 37 onwards, remove one more star
     else if (moveCount >= 37) {
         starIcon[1].classList.add('disabled');
+        starRating = 1;
     }
 }
 
@@ -237,6 +248,9 @@ function resetGame() {
     // Reset rating
     for (icon of starIcon) {
         icon.classList.remove('disabled');
+    }
+    for (star of finalRating) {
+        star.classList.remove('enabled');
     }
 
     // Flip down cards
