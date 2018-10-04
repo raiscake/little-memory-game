@@ -8,6 +8,7 @@
 
 body {
     font: 16px/2 'Roboto Slab', 'Georgia', sans-serif;
+    text-align: center;
     background: #c4e5ee;
 }
 
@@ -41,6 +42,7 @@ h6 {
     max-width: 740px;
     width: 100%;
     margin: 3em auto;
+    padding: 0 1em;
 }
 
 /* Game Grid */
@@ -54,7 +56,7 @@ h6 {
     flex-wrap: wrap;
     padding: 0;
     background-color: #fff;
-    border: 12px solid #fff;
+    border: 5px solid #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 0 0 #5B5577;
     list-style-type: none;
@@ -65,8 +67,8 @@ h6 {
     padding: 1em;
     background: #ffdcf4 url('../img/galaxy.svg');
     background-size: cover;  
-    border: 12px solid #fff;  
-    border-radius: 30px;
+    border: 5px solid #fff;  
+    border-radius: 20px;
     transform: rotateY(180deg);
     transform-style: preserve-3d;
     transition: transform .5s ease-in-out, background .3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
@@ -152,11 +154,6 @@ h6 {
 .game-stats {
     padding: 0;
     list-style-type: none;
-}
-
-.game-stats > li {
-    display: inline-block;
-    margin: 0 1em 0 0;
 }
 
 .games-stats-name {
@@ -286,6 +283,47 @@ h6 {
     }
     50% {
         transform: scale3d(1.05, 1.05, 1.05);
+    }
+}
+
+/* Min-width: 480px */
+
+@media screen and (min-width: 640px) {
+    body {
+        text-align: left;
+    }
+    .container {
+        padding: 0 2em;
+    }
+    .game-grid {
+        border-width: 8px;
+    }
+    .game-grid-cell {
+        border-width: 8px;
+    }
+    .game-stats > li {
+        display: inline-block;
+        margin: 0 1em 0 0;
+    }
+}
+
+/* Min-width: 640px */
+
+@media screen and (min-width: 640px) {
+    .game-grid {
+        border-width: 12px;
+    }
+    .game-grid-cell {
+        border-radius: 30px;
+        border-width: 12px;
+    }
+}
+
+/* Min-width: 800px */
+
+@media screen and (min-width: 800px) {
+    .container {
+        padding: 0;
     }
 }
 
