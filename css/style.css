@@ -141,6 +141,16 @@ h6 {
     list-style-type: none;
 }
 
+.games-stats-name {
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    color: #E6AF00;
+    font: 500 1em 'Roboto', 'Arial', sans-serif;
+    letter-spacing: .06em;
+    text-shadow: 1px 1px #5B5577;
+    text-transform: uppercase;
+}
+
 .rating-total {
     padding: 0;
     list-style-type: none;
