@@ -6,7 +6,7 @@ const gridCellSingle = document.querySelector('.game-grid-cell');
 const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingstar', 'telescope', 'ufo'];
 const totalCards = cardsList.length * 2;
 
-// Declare game proper variables
+// Declare game session variables
 
 let flippedCards = [];
 let matchedCards = 0;
@@ -19,6 +19,7 @@ const moveCounter = document.getElementById('moves-counter');
 const victoryModal = document.querySelector('.victory-modal');
 
 // Make a full deck of cards
+
 function makeCardDeck(cards) {
     let pair = cardsList.slice(0),
         deck = cardsList.concat(pair);
