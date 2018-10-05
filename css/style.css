@@ -75,16 +75,11 @@ h6 {
 }
 
 /* Generate square cards */
+
 .game-grid-cell:before {
     content: '';
     display: block;
     padding-top: 100%;
-}
-
-.game-grid:after {
-    content: '';
-    display: block;
-    clear: both;
 }
 
 /* Grid Cards */
@@ -207,7 +202,7 @@ h6 {
     transition: all .7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
-.victory-modal-box{
+.victory-modal-box {
     max-width: 500px;
     width: 85%;
     margin: 0 auto;
@@ -229,6 +224,8 @@ h6 {
 .victory-modal-stats {
     margin: .25em 0 1.25em;
 }
+
+/* Final Game Stats */
 
 #final-rating {
     padding: 0;

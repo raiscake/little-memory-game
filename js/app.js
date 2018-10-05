@@ -1,5 +1,4 @@
 // Declare game grid variables
-
 const grid = document.querySelector('.game-grid');
 const gridCells = document.getElementsByClassName('game-grid-cell');
 const gridCellSingle = document.querySelector('.game-grid-cell');
@@ -7,19 +6,16 @@ const cardsList = ['astronaut', 'atom', 'robot', 'rocket', 'saturn', 'shootingst
 const totalCards = cardsList.length * 2;
 
 // Declare game session variables
-
 let flippedCards = [];
 let matchedCards = 0;
 let moveCount = 0;
 let starRating = 5;
 
 // Declare game stats variables
-
 const moveCounter = document.getElementById('moves-counter');
 const victoryModal = document.querySelector('.victory-modal');
 
 // Make a full deck of cards
-
 function makeCardDeck(cards) {
     let pair = cardsList.slice(0),
         deck = cardsList.concat(pair);
@@ -117,7 +113,7 @@ function matchCards() {
     if (flippedCards.length == 2) {
         const firstCard = flippedCards[0],
             secondCard = flippedCards[1];
-        
+
         // If cards match...    
         if (firstCard.type === secondCard.type) {
             // set classes and attr for first card
@@ -138,6 +134,7 @@ function matchCards() {
 
             matchedCards += 2;
         }
+
         // If cards don't match..
         else {
             setTimeout(function(){
@@ -148,9 +145,9 @@ function matchCards() {
                 // flip down second card
                 secondCard.classList.add('face-down');
                 secondCard.removeAttribute('flipped');
-            }, 750);
-            
+            }, 750);            
         }
+
         // Empty flipped cards array
         flippedCards = [];
     }
@@ -282,7 +279,6 @@ function resetGame() {
 resetButton.addEventListener('click', resetGame);
 
 // Cheat codes!
-
 function revealCards() {
     for (cell of gridCells) {
         let cardIcon = cell.getAttribute('type');
