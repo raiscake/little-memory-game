@@ -19,7 +19,7 @@ const victoryModal = document.querySelector('.victory-modal');
 function makeCardDeck(cards) {
     let pair = cardsList.slice(0),
         deck = cardsList.concat(pair);
-     return deck;   
+     return deck;
 }
 
 const cardDeck = makeCardDeck(cardsList);
@@ -36,7 +36,7 @@ function randomizeDeck(deck) {
         deck[i] = deck[j];
         deck[j] = temp;
     }
-    return(deck);    
+    return(deck);
 }
 
 // Attach deck to game grid
@@ -76,7 +76,7 @@ function setTimer() {
         }
         else {
             minsTimer.textContent = mins;
-        }   
+        }
     }, 1000)
 }
 
@@ -114,10 +114,10 @@ function matchCards() {
         const firstCard = flippedCards[0],
             secondCard = flippedCards[1];
 
-        // If cards match...    
+        // If cards match...
         if (firstCard.type === secondCard.type) {
             // set classes and attr for first card
-            firstCard.classList.remove('face-down');            
+            firstCard.classList.remove('face-down');
             firstCard.setAttribute('matched', true);
 
             setTimeout(function() {
@@ -126,7 +126,7 @@ function matchCards() {
 
             // set classes and attr for second card
             secondCard.classList.remove('face-down');
-            
+
             secondCard.setAttribute('matched', true);
             setTimeout(function() {
                 secondCard.classList.add('matched');
@@ -145,7 +145,7 @@ function matchCards() {
                 // flip down second card
                 secondCard.classList.add('face-down');
                 secondCard.removeAttribute('flipped');
-            }, 750);            
+            }, 750);
         }
 
         // Empty flipped cards array
@@ -155,7 +155,7 @@ function matchCards() {
     else if (flippedCards.length > 2) {
         console.log('I don\'t know how you did this but congrats on breaking my code?');
         flippedCards = [];
-    }   
+    }
 }
 
 // When all cards are matched...
@@ -253,8 +253,8 @@ function resetGame() {
     time = 0;
 
     secsTimer.textContent = '00';
-    minsTimer.textContent = '00';   
-    finalSecs.textContent = 0; 
+    minsTimer.textContent = '00';
+    finalSecs.textContent = 0;
     finalMins.textContent = '';
 
     // Reset rating
@@ -273,7 +273,7 @@ function resetGame() {
     }
 
     // Reset deck
-    attachDeck();    
+    attachDeck();
 }
 
 resetButton.addEventListener('click', resetGame);

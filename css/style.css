@@ -28,7 +28,7 @@ h6 {
     display: inline-block;
     margin: 0;
     color: #fdf3b8;
-    font-size: 2em;
+    font-size: 1.5em;
     letter-spacing: .03em;
     text-shadow: 2px 2px #5B5577;
 }
@@ -66,8 +66,8 @@ h6 {
     width: 25%;
     padding: 1em;
     background: #ffdcf4 url('../img/galaxy.svg');
-    background-size: cover;  
-    border: 5px solid #fff;  
+    background-size: cover;
+    border: 5px solid #fff;
     border-radius: 20px;
     transform: rotateY(180deg);
     transform-style: preserve-3d;
@@ -302,6 +302,7 @@ h6 {
 
     .header-title {
         margin: 0 .75em 0 0;
+        font-size: 2em;
     }
 
     .game-grid {
@@ -344,7 +345,7 @@ h6 {
     .game-grid-cell {
         border-radius: 30px;
         border-width: 12px;
-    } 
+    }
 
 }
 
