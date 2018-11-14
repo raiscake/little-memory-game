@@ -14,5 +14,5 @@ Match the cards with as few moves as possible. The fewer moves you make, the mor
 
 ## Credits
 
-[The Doodle Library](https://www.thedoodlelibrary.com/) - drawings used in the cards
-[Easings.net](https://easings.net/) - animation speed reference
+- [The Doodle Library](https://www.thedoodlelibrary.com/) - drawings used in the cards
+- [Easings.net](https://easings.net/) - animation speed reference
